@@ -1,22 +1,23 @@
 # VersionAdapter
 
-### A Adapter for the HttpVersionServer
+### A java Adapter for the [HttpVersionServer](https://github.com/Teddyw2000/Version-Http-Server)
 
 ## How to use
 ```java
-public static void main(String[] args) {
-		VersionAdapter versionAdapter = new VersionAdapter("http://localhost:3030/version?method=GET", UserAgent.MOZILLA_5_0);
-		try {
-			versionAdapter.getVersion(); 
-		} catch (IOException e) {
-			System.out.println("[Error] Could not fetch version! | " + e.getMessage());
-		}
+//Create an instance
+VersionAdapter versionAdapter = new VersionAdapter("http://localhost:3030/version?method=GET", UserAgent.MOZILLA_5_0);
 
-	}
+//Get the version via Http
+try {
+   versionAdapter.getVersion(); 
+} catch (IOException e) {
+   System.out.println("[Error] Could not fetch version! | " + e.getMessage());
+}
 ```
 
 ## Javascript Example
-#### Using the Fetch module from Node
+#### Using Javascript? No problem!
+##### Here is an example using the fetch module from Node
 
 ```javascript
 const fetch = require('node-fetch');
